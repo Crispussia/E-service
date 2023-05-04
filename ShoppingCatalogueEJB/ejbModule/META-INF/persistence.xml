@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://
+java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+ version="2.0">
+
+ <persistence-unit name="managerCatalogue" transaction-type="JTA">
+ <jta-data-source>java:/CatalogueDS</jta-data-source>
+ <class>fr.eilco.entities.FacadeCategorie</class>
+ <class>fr.eilco.entities.FacadeProduit</class>
+ <class>fr.eilco.entities.FacadeClient</class>
+ <class>fr.eilco.entities.FacadeCommandeClient</class>
+ <class>fr.eilco.entities.FacadeProduitCommande</class>
+ <properties>
+<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+ <property name="hibernate.hbm2ddl.auto" value="update" />
+ <!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+ <property value="true" name="hibernate.show_sql"/>
+ </properties>
+ </persistence-unit>
+</persistence>
